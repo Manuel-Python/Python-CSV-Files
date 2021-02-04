@@ -49,20 +49,30 @@ import pandas
 # data_frame.to_csv("new_data.csv")
 
 data = pandas.read_csv("squirrel.csv")
-grey_squirrels = data[data["Primary Fur Color"] == "Gray"]
-grey_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
-red_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
-black_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
-print(grey_squirrels_count)
-print(red_squirrels_count)
-print(black_squirrels_count)
+# grey_squirrels = data[data["Primary Fur Color"] == "Gray"]
+# grey_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
+# red_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
+# black_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
+# print(grey_squirrels_count)
+# print(red_squirrels_count)
+# print(black_squirrels_count)
+#
+# data_dict = {
+#     "Fur Color": ["Gray", "Cinnamon", "Black"],
+#     "Count": [grey_squirrels_count, red_squirrels_count, black_squirrels_count]
+# }
+#
+# print(data_dict)
+#
+# df = pandas.DataFrame(data_dict)
+# df.to_csv("sqirrel_count.csv")
+squirrel_num = data[data["Unique Squirrel ID"] == "30B-AM-1007-04"]
 
 data_dict = {
-    "Fur Color": ["Gray", "Cinnamon", "Black"],
-    "Count": [grey_squirrels_count, red_squirrels_count, black_squirrels_count]
+    "Co-ords": ["X", "Y", "ID"],
+    "Data": [data["Y"], data["X"], data["Unique Squirrel ID"]]
 }
-
 print(data_dict)
 
 df = pandas.DataFrame(data_dict)
-df.to_csv("sqirrel_count.csv")
+df.to_csv("sqirrel_data.csv")
