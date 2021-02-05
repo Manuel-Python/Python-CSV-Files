@@ -76,3 +76,6 @@ print(data_dict)
 
 df = pandas.DataFrame(data_dict)
 df.to_csv("sqirrel_data.csv")
+
+squirrel_num1 = data[data["Highlight Fur Color"] == "White"]
+print(squirrel_num1)
